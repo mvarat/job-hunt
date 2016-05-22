@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="Jobs">
+  <head>
+    <title>Job Hunt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel='stylesheet' href='/css/styles.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js" charset="utf-8"></script>
+    <script src="/javascripts/services/jobsAPI.js" charset="utf-8"></script>
+    <script src="/javascripts/controllers/job_controller.js" charset="utf-8"></script>
+    <script src="/javascripts/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="JobController">
+      <h2>{{ title }}</h2>
+      <form>
+        <input ng-model="job.company" placeholder="Company">
+        <input ng-model="job.position" placeholder="Position">
+        <input ng-model="job.url" placeholder="Link to Job Description">
+        <input ng-model="job.applied" placeholder="Have you applied?">
+        <input ng-model="job.interview" placeholder="Have you interviewed?">
+        <input type="submit" ng-click="saveJob(job)" value="New Job Alert!">
+      </form>
+
+      <div class="container">
+        <span class="job" ng-repeat="job in jobs">
+          <h4>{{ job.company }}: {{ job.position }} </h4>
+          <p>{{ job.url }}</p>
+          <p>Applied: {{ job.applied }}, Interview: {{ job.interview }}</p>
+          <button type="button" name="button" ng-click="editJob(job)">EDIT</button>
+          <button type="button" name="button" ng-click="deleteJob(job)">DELETE</button>
+        </span>
+      </div>
+  </body>
+</html>
