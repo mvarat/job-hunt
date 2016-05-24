@@ -10,7 +10,6 @@ angular
 
       // Save job
       $scope.saveJob = function(post) {
-
         var newJob = {
           job: {
             company: post.company,
@@ -20,7 +19,6 @@ angular
             interview: post.interview,
           }
         }
-
         jobsAPI.save(newJob).then(function(response){
           $scope.jobs.push(response.data);
           $scope.job.company="";
@@ -50,5 +48,22 @@ angular
         })
       }
 
+      //UPDATE $http to update job
+      $scope.updateJob = function(job) {
+        console.log(job);
+        jobsAPI.update(job).then(function(response){
+          console.log("update yay");
+          console.log(response);
+          if(response.status == 204 || response.status == 203) {
+            console.log("update");
+
+            // return jobs that dont match id of removed job
+            $scope.jobs = $scope.jobs.filter(function(i){
+              return i._id != job._id;
+            })
+          }
+
+        })
+      }
     }
   ]);

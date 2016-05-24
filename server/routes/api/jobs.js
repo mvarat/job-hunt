@@ -14,31 +14,20 @@ router.get('/', function(req, res){
 
 // Show One Job
 router.get('/:id', function(req, res){
-  Job.findById( req.params.id, function( err, dbJobs){
+  Job.findById( req.params.id, function( err, dbJob){
     res.json( dbJob );
   });
 });
 
-// Edit Job
+// Update Job
 router.put('/:id', function(req, res){
-  Job.findById( req.params.id, function( err, job){
-    if (err){
-      res.send(err);
-    }
-    job.company = req.body.company;
-    job.position = req.body.position;
-    job.url = req.body.url;
-    job.applied = req.body.applied;
-    job.interview = req.body.interview;
-    job.save(function(err){
-      if (err){
-        res.send(err);
-      }
-      res.json({ message: 'JOb updated!' });
-    })
-  });
-});
 
+  var id = req.params.id;
+  Job.findByIdAndUpdate(id, req.body.job , function(err, job) {
+    res.json(req.body.job);
+  });
+
+});
 
 // Job
 router.post('/', function(req, res){

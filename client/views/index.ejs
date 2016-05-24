@@ -27,6 +27,14 @@
           <p>Applied: {{ job.applied }}, Interview: {{ job.interview }}</p>
           <button type="button" name="button" ng-click="editJob(job)">EDIT</button>
           <button type="button" name="button" ng-click="deleteJob(job)">DELETE</button>
+          <form>
+            <input ng-model="job.company" placeholder="Company">
+            <input ng-model="job.position" placeholder="Position">
+            <input ng-model="job.url" placeholder="Link to Job Description">
+            <input ng-model="job.applied" placeholder="Have you applied?">
+            <input ng-model="job.interview" placeholder="Have you interviewed?">
+            <input type="submit" ng-click="updateJob(job)" value="New Job Alert!">
+          </form>
         </span>
       </div>
   </body>

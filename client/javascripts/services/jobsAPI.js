@@ -12,8 +12,12 @@ angular
         save: function(newJob){
           return $http.post('/api/jobs', newJob);
         },
-        update: function(id){
-          return $http.put('/api/jobs/' + id);
+        update: function(job){
+          var payload = {
+            job: job
+          }
+          console.log("payload", payload)
+          return $http.put('/api/jobs/' + job._id, payload);
         },
         remove: function(id){
           return $http.delete('/api/jobs/' + id);
