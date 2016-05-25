@@ -5,7 +5,7 @@ angular
   .controller('JobController', ['$scope', '$http', 'jobsAPI',
     function( $scope, $http, jobsAPI) {
 
-      $scope.title = "So you want to find a JOB?";
+      $scope.title = "JOB HUNTER";
       $scope.jobs = [];
 
       // Save job
@@ -48,6 +48,9 @@ angular
         })
       }
 
+      $scope.editJob = function(job){
+        $('.edit-form').css('visibility', 'visible');
+      }
       //UPDATE $http to update job
       $scope.updateJob = function(job) {
         console.log(job);

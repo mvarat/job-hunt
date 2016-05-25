@@ -1,3 +1,24 @@
 body {
-  background-color: pink;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+    url(/images/camo.jpg);
+  background-size: cover;
+  background-repeat: repeat-y;
+  text-align: center;
+  color: navy;
 }
+
+form{
+  text-align: left;
+  color: black;
+}
+
+/*#overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: navy;
+   opacity: 0.6;
+}*/
