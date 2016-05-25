@@ -2,6 +2,7 @@
 <html ng-app="Jobs">
   <head>
     <title>Job Hunt</title>
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel='stylesheet' href='/css/styles.css' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -12,12 +13,12 @@
     <script src="/javascripts/app.js" charset="utf-8"></script>
   </head>
   <body ng-controller="JobController">
-      <h2>{{ title }}</h2>
+      <h1>{{ title }}</h1>
 
       <a class=" modal-trigger" href="#new-job-modal">
         <img src="./images/target.png">
       </a>
-      <p>[click to add a job]</p>
+      <p>[click target to add a job]</p>
 
       <!-- Modal Structure -->
       <div id="new-job-modal" class="modal">
@@ -44,9 +45,7 @@
             </div>
             <p>
               <input type="checkbox" id="applied-checkbox" ng-model="job.applied" />
-              <label for="applied-checkbox">Applied?</label>
-            </p>
-            <p>
+              <label for="applied-checkbox">Applied?    </label>
               <input type="checkbox" id="interview-checkbox" ng-model="job.interview" />
               <label for="interview-checkbox">Interview?</label>
             </p>
