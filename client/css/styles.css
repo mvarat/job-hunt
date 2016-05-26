@@ -18,6 +18,19 @@ h1 {
   color: black;
   text-shadow: 3px 3px midnightblue;
 }
+
+a {
+  color: black;
+}
+
+.edit-icon {
+  display: inline;
+}
+
+h5 {
+  display: inline;
+  font-size: 18px;
+}
 .btn{
   background-color: midnightblue;
 }
@@ -28,6 +41,31 @@ h1 {
     background-color: rgba(0, 0, 139, 0.65);
   }
 
-label{
-  margin-left: 20px;
-}
+/* label color */
+ .input-field label {
+   margin-left: 20px;
+   color: midnightblue;
+ }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+   color: midnightblue;
+ }
+ /* label underline focus color */
+ .input-field input[type=text]:focus {
+   border-bottom: 1px solid midnightblue;
+   box-shadow: 0 1px 0 0 black;
+ }
+ /* valid color */
+ .input-field input[type=text].valid {
+   border-bottom: 1px solid midnightblue;
+   box-shadow: 0 1px 0 0 black;
+ }
+ /* invalid color */
+ .input-field input[type=text].invalid {
+   border-bottom: 1px solid midnightblue;
+   box-shadow: 0 1px 0 0 black;
+ }
+ /* icon prefix focus color */
+ .input-field .prefix.active {
+   color: midnightblue;
+ }

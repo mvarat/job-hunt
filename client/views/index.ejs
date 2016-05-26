@@ -24,7 +24,6 @@
       <div id="new-job-modal" class="modal">
         <div class="modal-content">
           <form>
-
             <div class="row">
               <div class="input-field col s12">
                 <input id="company" type="text" class="validate" ng-model="job.company">
@@ -51,7 +50,7 @@
             </p>
         </div>
         <div class="modal-footer">
-          <input type="submit" class=" modal-action modal-close btn-flat" ng-click="saveJob(job)" value="New Job Alert!">
+          <input type="submit" class=" modal-action modal-close btn-flat" ng-click="saveJob(job)" value="ADD JOB">
           <!-- <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a> -->
         </div>
         </form>
@@ -59,21 +58,42 @@
 
       <div class="container">
         <span class="job" ng-repeat="job in jobs">
-          <h4>{{ job.company }}: {{ job.position }} </h4>
-          <p>{{ job.url }}</p>
+          <h5><a ng-click="deleteJob(job)">X  </a>{{ job.company }}: {{ job.position }}, {{ job.url }} </h5>
+          <a ng-click="editForm = !editForm">
+            <img src="./images/edit.png" style="width:15px;height:15px;border:0;" class="edit-icon">
+          </a>
           <p>Applied: {{ job.applied }}, Interview: {{ job.interview }}</p>
-          <button type="button" name="button" ng-click="editForm = !editForm" class="waves-effect waves-light btn">EDIT</button>
-          <button type="button" name="button" ng-click="deleteJob(job)" class="waves-effect waves-light btn">DELETE</button>
+          <!-- <button type="button" name="button" ng-click="editForm = !editForm" class="waves-effect waves-light btn">EDIT</button>
+          <button type="button" name="button" ng-click="deleteJob(job)" class="waves-effect waves-light btn">DELETE</button> -->
           <div class="edit-form" ng-show="editForm">
             <form>
-              <input ng-model="job.company" placeholder="Company">
-              <input ng-model="job.position" placeholder="Position">
-              <input ng-model="job.url" placeholder="Link to Job Description">
-              <input ng-model="job.applied" placeholder="Have you applied?">
-              <input ng-model="job.interview" placeholder="Have you interviewed?">
-              <input type="submit" ng-click="updateJob(job); editForm = !editForm" class="waves-effect waves-light btn" value="UPDATE">
-            </form>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="company" type="text" class="validate" ng-model="job.company">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="position" type="text" class="validate" ng-model="job.position">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="url" type="text" class="validate" ng-model="job.url">
+                </div>
+              </div>
+              <p>
+                <input type="checkbox" id="applied-checkbox" ng-model="job.applied"/>
+                <label for="applied-checkbox">Applied?</label>
+                <input type="checkbox" id="interview-checkbox" ng-model="job.interview"/>
+                <label for="interview-checkbox">Interview?</label>
+              </p>
+          <div class="modal-footer">
+            <input type="submit" ng-click="updateJob(job); editForm = !editForm" class="waves-effect waves-light btn" value="UPDATE">
+            <!-- <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a> -->
           </div>
+          </form>
+        </div>
         </span>
       </div>
   </body>
