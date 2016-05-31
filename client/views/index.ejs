@@ -15,7 +15,7 @@
   <body ng-controller="JobController">
       <h1>{{ title }}</h1>
 
-      <a class=" modal-trigger" href="#new-job-modal">
+      <a class="modal-trigger" href="#new-job-modal">
         <img src="./images/target.png">
       </a>
       <p>[click target to add a job]</p>
@@ -58,7 +58,7 @@
 
       <div class="container">
         <span class="job" ng-repeat="job in jobs">
-          <h5><a ng-click="deleteJob(job)">X  </a>{{ job.company }}: {{ job.position }}, {{ job.url }} </h5>
+          <h5><a ng-click="deleteJob(job)">X  </a><b>{{ job.company }}:</b> {{ job.position }}, <i>{{ job.url }}</i></h5>
           <a ng-click="editForm = !editForm">
             <img src="./images/edit.png" style="width:15px;height:15px;border:0;" class="edit-icon">
           </a>
@@ -83,17 +83,17 @@
                 </div>
               </div>
               <p>
-                <input type="checkbox" id="applied-checkbox" ng-model="job.applied"/>
+                <input type="checkbox" id="applied-checkbox" ng-change="change()" ng-model="job.applied"/>
                 <label for="applied-checkbox">Applied?</label>
                 <input type="checkbox" id="interview-checkbox" ng-model="job.interview"/>
                 <label for="interview-checkbox">Interview?</label>
               </p>
           <div class="modal-footer">
             <input type="submit" ng-click="updateJob(job); editForm = !editForm" class="waves-effect waves-light btn" value="UPDATE">
-            <!-- <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a> -->
           </div>
           </form>
         </div>
+
         </span>
       </div>
   </body>

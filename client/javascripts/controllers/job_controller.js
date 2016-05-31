@@ -48,6 +48,10 @@ angular
         })
       }
 
+      $scope.change = function(){
+        console.log("clicked");
+      }
+
       $scope.editJob = function(job){
         $('.edit-form').css('visibility', 'visible');
       }

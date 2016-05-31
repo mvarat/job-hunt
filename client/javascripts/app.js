@@ -7,4 +7,5 @@ angular.module('Jobs', [
 $(document).ready(function() {
   $('.modal-trigger').leanModal();
   Materialize.updateTextFields();
+  $('select').material_select();
 });
