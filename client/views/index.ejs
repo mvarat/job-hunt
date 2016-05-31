@@ -82,13 +82,9 @@
                   <input id="url" type="text" class="validate" ng-model="job.url">
                 </div>
               </div>
-              <p>
-                <input type="checkbox" id="applied-checkbox" ng-change="change()" ng-model="job.applied"/>
-                <label for="applied-checkbox">Applied?</label>
-                <input type="checkbox" id="interview-checkbox" ng-model="job.interview"/>
-                <label for="interview-checkbox">Interview?</label>
-              </p>
           <div class="modal-footer">
+            <input type="submit" ng-click="updateJob(job); editForm = !editForm; job.applied = true" class="waves-effect waves-light btn" value="APPLY">
+            <input type="submit" ng-click="updateJob(job); editForm = !editForm; job.interview = true" class="waves-effect waves-light btn" value="INTERVIEW">
             <input type="submit" ng-click="updateJob(job); editForm = !editForm" class="waves-effect waves-light btn" value="UPDATE">
           </div>
           </form>
