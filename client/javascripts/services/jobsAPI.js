@@ -16,7 +16,6 @@ angular
           var payload = {
             job: job
           }
-          console.log("payload", payload)
           return $http.put('/api/jobs/' + job._id, payload);
         },
         remove: function(id){

@@ -38,7 +38,6 @@ angular
 
         jobsAPI.remove(job._id).then(function(response){
           if(response.status == 204 || response.status == 203) {
-            console.log("delete");
             // return jobs that dont match id of removed job
             $scope.jobs = $scope.jobs.filter(function(i){
               return i._id != job._id;
@@ -57,12 +56,8 @@ angular
       }
       //UPDATE $http to update job
       $scope.updateJob = function(job) {
-        console.log(job);
         jobsAPI.update(job).then(function(response){
-          console.log("update yay");
-          console.log(response);
           if(response.status == 204 || response.status == 203) {
-            console.log("update");
 
             // return jobs that dont match id of removed job
             $scope.jobs = $scope.jobs.filter(function(i){

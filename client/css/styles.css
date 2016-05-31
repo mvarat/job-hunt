@@ -22,6 +22,7 @@ h1 {
 a {
   cursor: pointer;
   color: black;
+  display: inline;
 }
 
 .edit-icon {
@@ -79,3 +80,18 @@ h5 {
   margin-left: 20px;
    color: black;
  }
+
+.apply {
+  color: darkslategray;
+
+}
+
+.no-apply {
+  color: black;
+
+}
+
+.interview {
+  color: midnightblue;
+
+}

@@ -31,7 +31,6 @@ router.put('/:id', function(req, res){
 
 // Job
 router.post('/', function(req, res){
-  console.log(req.body)
   Job.create(req.body.job, function(err, job){
     res.json(job);
   });
@@ -39,7 +38,6 @@ router.post('/', function(req, res){
 
 // Delete
 router.delete('/:id', function(req, res) {
-  console.log('deleting job!');
   Job.findByIdAndRemove(req.params.id, function(err){
     if (err) { res.status(500).end(); }
     res.status(204).end();
