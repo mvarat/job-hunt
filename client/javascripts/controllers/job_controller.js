@@ -5,7 +5,7 @@ angular
   .controller('JobController', ['$scope', '$http', 'jobsAPI',
     function( $scope, $http, jobsAPI) {
 
-      $scope.title = "JOB HUNTER";
+      $scope.title = "JOB HUNT";
       $scope.jobs = [];
 
       // Save job

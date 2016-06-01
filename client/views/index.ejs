@@ -18,7 +18,7 @@
       <a class="modal-trigger" href="#new-job-modal">
         <img src="./images/target.png">
       </a>
-      <p>[click target to add a job]</p>
+      <h6>[click target to add a job]</h6>
 
       <!-- Modal Structure -->
       <div id="new-job-modal" class="modal">
@@ -61,11 +61,11 @@
           <div ng-class="job.applied ? 'apply' : 'no-apply'">
             <div ng-class="job.interview ? 'interview' : 'no-interview'">
               <h5><a ng-click="deleteJob(job)">X  </a><b>{{ job.company }}:</b> {{ job.position }}, <i>{{ job.url }}</i></h5>
+              <a ng-click="editForm = !editForm">
+                <img src="./images/edit.png" style="width:15px;height:15px;border:0;" class="edit-icon">
+              </a>
             </div>
           </div>
-          <a ng-click="editForm = !editForm">
-            <img src="./images/edit.png" style="width:15px;height:15px;border:0;" class="edit-icon">
-          </a>
           <!-- <p>Applied: {{ job.applied }}, Interview: {{ job.interview }}</p> -->
           <!-- <button type="button" name="button" ng-click="editForm = !editForm" class="waves-effect waves-light btn">EDIT</button>
           <button type="button" name="button" ng-click="deleteJob(job)" class="waves-effect waves-light btn">DELETE</button> -->
