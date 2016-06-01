@@ -20,6 +20,7 @@ var jobsRouter = require('./server/routes/api/jobs');
 app.use('/', indexRouter);
 app.use('/api/jobs', jobsRouter);
 
-app.listen(8080, function(){
-  console.log("tune into port 8080");
+var port = process.env.PORT || 8080;
+app.listen(port, function(){
+  console.log("tune into port 8080") ;
 });
