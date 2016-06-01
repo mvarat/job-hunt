@@ -9,7 +9,7 @@ app.use(express.static('./client'));
 app.set('views', __dirname + '/client/views')
 app.set('view engine', 'ejs')
 
-mongoose.connect('mongodb://localhost/jobs_api')
+mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost/jobs_api')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
